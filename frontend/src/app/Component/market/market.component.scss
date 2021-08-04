@@ -1,0 +1,24 @@
+.container{
+   color: white;
+  //  height: 100%;
+   padding: 4% 4% 8% 8%;
+}
+input{
+  border-radius: 15px 15px 15px 15px;
+  padding: 3%;
+  border-color: #fecd4694;
+  border-width: 2px;
+  background-color: rgba(116, 115, 122, 0.123);
+  width: 100%;
+  color: white;
+}
+input:focus{
+  outline: none;
+  border-color:#fecd46 ;
+  box-shadow: 0 0 0 0.2rem #fecd4654 !important;
+}
+button{
+  border-radius: 15px 15px 15px 15px;
+  background-color: #fece46;
+  font-size: larger;
+}

@@ -1,0 +1,37 @@
+mat-toolbar{
+  // padding: 1%;
+  padding-left: 3%;
+  padding-right: 3%;
+  // padding-top: 1%;
+  height: 20%;
+  background-color:transparent;
+}
+.headline{
+  margin-left: 1%;
+  width: 100%;
+}
+h1{
+  font-size: 163%;
+  color: #fece46  ;
+}
+.tag{
+  color: gray;
+  font-weight: 100;
+  font-size: 80%;
+  margin-top: 1%;
+}
+button{
+  // background-color: #fece46;
+  border-color: #fece46 !important;
+  color: #fece46;
+  font-size: 18px;
+}
+button:hover{
+  background-color: #fece46;
+  color: rgb(4, 2, 14);
+}
+mat-divider{
+  border-top-color: #fecd4662;
+  // margin: 1%;
+}
+
