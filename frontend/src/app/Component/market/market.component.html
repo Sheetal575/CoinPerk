@@ -1,31 +1,46 @@
 <div fxLayout="column" class="container">
-  <div fxLayout="row">
-    <div fxFlex="30%" fxLayoutAlign="space-between center">
-      <div fxFlex="70%"><input type="text"></div>
-      <div><button mat-raised-button >Search</button></div>
+  <div fxLayout="row" fxLayout.xs="column">
+    <div fxFlex="50%" fxLayout.xs="100%" fxFlex.sm="50%" fxLayoutAlign="space-between center">
+      <div fxFlex="100%"><input type="text" [(ngModel)]="filterTerm" placeholder="Search Coin Here"></div>
+      <!-- <div fxFlex="30%"><button mat-raised-button >Search</button></div> -->
     </div>
     <div>
-
     </div>
   </div>
-  <div>
-    <table style="width:100%">
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Age</th>
+  <br>
+  <div class="crpto_table">
+    <table id="customers" >
+      <tr >
+        <th></th>
+        <th>Coin</th>
+        <th></th>
+         <th>Current Price</th>
+         <th>24h Change</th>
+        <th>Market Cap</th>
+        <th>Total Supply</th>
       </tr>
-      <tr>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <td>Eve</td>
-        <td>Jackson</td>
-        <td>94</td>
+      <tr *ngFor="let item of cryto | filter:filterTerm" >
+        <td >1</td>
+        <td>
+          <img src={{item.image}} alt="" width="30" height="30">
+        </td>
+        <td fxLayout="column">
+          <span class="symbol">{{item.symbol}}</span>
+          <span class="id">{{item.id}}</span>
+        </td>
+        <td>{{item.current_price}} USD</td>
+        <td [ngClass]="{
+          'positive' : item.price_change_percentage_24h > 0,
+          'negative' : item.price_change_percentage_24h < 0
+       }">{{item.price_change_percentage_24h}}%</td>
+        <td>${{item.market_cap}}</td>
+        <td>{{item.total_supply}}</td>
+        <!-- <td>Germany</td> -->
+
       </tr>
     </table>
+    <!-- <ngb-pagination [collectionSize]="items.length" [(page)]="page" [maxSize]="5" [rotate]="true" [ellipses]="false" ></ngb-pagination> -->
 
   </div>
+
 </div>

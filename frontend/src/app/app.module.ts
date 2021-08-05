@@ -11,6 +11,11 @@ import { MarketComponent } from './Component/market/market.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatTableModule} from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +31,11 @@ import {MatDividerModule} from '@angular/material/divider';
     FormsModule,
     MatToolbarModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTableModule,
+    HttpClientModule,
+    NgbModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
