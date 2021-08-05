@@ -4,7 +4,17 @@
       <div fxFlex="100%"><input type="text" [(ngModel)]="filterTerm" placeholder="Search Coin Here"></div>
       <!-- <div fxFlex="30%"><button mat-raised-button >Search</button></div> -->
     </div>
-    <div>
+    <div fxFlex="50%" fxLayoutAlign="end center">
+      <select   id="INR" [(ngModel)]="selectedCurrency" (change)="method_name()">
+        <option value="INR">INR</option>
+        <option value="EUR">EUR</option>
+        <option value="AUD">AUD</option>
+        <option value="USD">USD</option>
+        <option value="RUB">RUB</option>
+        <option value="JPY">JPY</option>
+        <option value="NZD">NZD</option>
+        <option value="ZAR">ZAR</option>
+      </select>
     </div>
   </div>
   <br>
@@ -14,13 +24,15 @@
         <th></th>
         <th>Coin</th>
         <th></th>
-         <th>Current Price</th>
+         <th>Current Price in {{selectedCurrency}}</th>
          <th>24h Change</th>
         <th>Market Cap</th>
+        <th>Max Supply</th>
         <th>Total Supply</th>
+        <th>Total Volume</th>
       </tr>
-      <tr *ngFor="let item of cryto | filter:filterTerm" >
-        <td >1</td>
+      <tr *ngFor="let item of cryto | filter:filterTerm , let i=index" >
+        <td >{{i+1}}</td>
         <td>
           <img src={{item.image}} alt="" width="30" height="30">
         </td>
@@ -28,13 +40,15 @@
           <span class="symbol">{{item.symbol}}</span>
           <span class="id">{{item.id}}</span>
         </td>
-        <td>{{item.current_price}} USD</td>
+        <td>{{item.current_price}}</td>
         <td [ngClass]="{
           'positive' : item.price_change_percentage_24h > 0,
           'negative' : item.price_change_percentage_24h < 0
        }">{{item.price_change_percentage_24h}}%</td>
         <td>${{item.market_cap}}</td>
+        <td>{{item.max_supply}}</td>
         <td>{{item.total_supply}}</td>
+        <td>{{item.total_volume}}</td>
         <!-- <td>Germany</td> -->
 
       </tr>

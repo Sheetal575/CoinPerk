@@ -9,12 +9,14 @@ input{
   border-color: #fecd4694;
   border-width: 2px;
   background-color: rgba(116, 115, 122, 0.123);
-  width: 100%;
+  width: 80%;
+
   color: white;
 }
 input:focus{
   outline: none;
   border-color:#fecd46 ;
+  width: 100%;
   box-shadow: 0 0 0 0.2rem #fecd4654 !important;
 }
 button{
@@ -47,6 +49,7 @@ th{
 }
 .negative{
   color: red;
+  animation: blinkMe 1s linear infinite;
 }
 #customers tr{background-color:#f3e8c9de;color: black;padding:4px}
 
@@ -76,4 +79,31 @@ tr{
 .id{
   color: grey;
 }
+.blink {
+  animation: blinkMe 2s linear infinite;
+ }
+ @keyframes blinkMe {
+  0% {
+   opacity: 1;
+  }
+  50% {
+   opacity: 0;
+  }
 
+ }
+ select{
+   padding:2%;
+   border-radius: 10px 10px 10px 10px;
+   border-color: #fecd4694;
+   background-color: rgb(4, 2, 14);
+   color: white;
+   padding-left: 21px;
+  padding-right: 21px;
+ }
+ select:focus{
+   outline: none;
+
+ }
+ .option:hover{
+  background-color: #fecd4694;
+ }
